@@ -1,11 +1,11 @@
 # Setup
-title: Personal Website
+title: Viviana Palacio Betancur
 description: Beckman Postdoctoral Fellow, UIUC
 url: https://v-palacio.github.io
 avatar: /headshot.jpg
 paginate: 5
 permalink: pretty
-cover_image: /bg.jpg
+cover_image: /bg.jpeg
 
 # Gems
 plugins:
