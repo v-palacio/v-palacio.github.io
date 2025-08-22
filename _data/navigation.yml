@@ -1,4 +1,6 @@
-- title: Blog
+- title: Home
   url: /
-- title: About
-  url: /about/
+- title: CV
+  url: /cv/
+- title: News
+  url: /news/
