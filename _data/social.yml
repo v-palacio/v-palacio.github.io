@@ -1,9 +1,15 @@
 - title: Email
-  url: mailto://vszhub@gmail.com
+  url: mailto://vpalaciob@gmail.com
   icon: fas fa-envelope
-- title: Twitter
-  url: https://twitter.com/vszhub
-  icon: fab fa-twitter
+- title: Email
+  url: mailto://vpalacio@illinois.edu
+  icon: fab fa-envelope
+- title: Google Scholar
+  url: https://scholar.google.com/citations?user=yEaZCEMAAAAJ&hl=en
+  icon: fab fa-google
+- title: LinkedIn
+  url: https://www.linkedin.com/in/vpalaciob/
+  icon: fab fa-linkedin
 - title: GitHub
-  url: https://github.com/vszhub/not-pure-poole
+  url: https://github.com/v-palacio/
   icon: fab fa-github
