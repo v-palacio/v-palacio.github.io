@@ -1,9 +1,9 @@
 - title: Email
-  url: mailto://vpalaciob@gmail.com
+  url: mailto:vpalaciob@illinois.edu
   icon: fas fa-envelope
 - title: Email
-  url: mailto://vpalacio@illinois.edu
-  icon: fab fa-envelope
+  url: mailto:vpalaciob@gmail.com
+  icon: fas fa-envelope
 - title: Google Scholar
   url: https://scholar.google.com/citations?user=yEaZCEMAAAAJ&hl=en
   icon: fab fa-google
