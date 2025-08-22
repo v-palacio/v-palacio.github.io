@@ -9,10 +9,8 @@ title: News
   <p>Stay updated with my latest research publications, conference presentations, and announcements.</p>
   
   <div class="news-feed">
-    {% assign news_posts = site.posts | where_exp: "post", "post.categories contains 'news' or post.categories contains 'publications' or post.categories contains 'announcements'" %}
-    
-    {% if news_posts.size > 0 %}
-      {% for post in news_posts %}
+    {% for post in site.posts %}
+      {% if post.categories contains "news" or post.categories contains "publications" or post.categories contains "announcements" %}
         <article class="news-item">
           <h3 class="news-title">
             <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
@@ -25,10 +23,20 @@ title: News
           </div>
           <p class="news-excerpt">{{ post.excerpt | strip_html }}</p>
         </article>
-      {% endfor %}
-    {% else %}
+      {% endif %}
+    {% endfor %}
+    
+    {% assign has_news = false %}
+    {% for post in site.posts %}
+      {% if post.categories contains "news" or post.categories contains "publications" or post.categories contains "announcements" %}
+        {% assign has_news = true %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+    
+    {% unless has_news %}
       <p class="no-news">No news items yet. Check back soon for updates!</p>
-    {% endif %}
+    {% endunless %}
   </div>
   
   <div class="news-categories">
