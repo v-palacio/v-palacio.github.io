@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+# Force ARM64 platform for Apple Silicon
+platforms :ruby do
+  gem 'nokogiri', '~> 1.13'
+end
+
 group :jekyll_plugins do
   gem 'jekyll'
   gem 'jekyll-feed'
