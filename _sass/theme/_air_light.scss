@@ -3,18 +3,18 @@
    ========================================================================== */
 
 /* Color codes used for the theme */
-$primary-color              : #0092ca;
-$dark-primary-color         : mix(#000, $primary-color, 40%);
-$darker-primary-color       : mix(#000, $primary-color, 60%);
-$light-primary-color        : mix(#000, $primary-color, 50%);
+$primary-color              : #0047AB;  /* Cobalt */
+$dark-primary-color         : #003A8C;  /* Darker cobalt */
+$darker-primary-color       : #002D6B;  /* Darkest cobalt */
+$light-primary-color        : #3B82F6;  /* Cornflower */
 
-$background                 : #eeeeee;
-$background-light           : mix(#fff, $background, 20%);
-$background-lighter         : mix(#fff, $background, 90%);
-$text                       : #222831;
-$link                       : #393e46;
-$link-dark                  : mix(#000, $link, 25%);
-$link-light                 : mix(#fff, $link, 25%);
+$background                 : #F9FAFB;  /* Light gray background */
+$background-light           : #F3F4F6;  /* Slightly darker gray */
+$background-lighter         : #FFFFFF;  /* White */
+$text                       : #1E1E1E;  /* Dark text */
+$link                       : #3B82F6;  /* Cornflower blue */
+$link-dark                  : #2563EB;  /* Brighter cobalt */
+$link-light                 : #60A5FA;  /* Light blue */
 $footer                     : $primary-color;
 
 /* Color codes used for the site */
@@ -23,6 +23,7 @@ $info-color                 : #2f7f93;
 $notice-color               : #7a8288;
 $success-color              : #62c462;
 $warning-color              : #f89406;
+$highlight-color            : #9E1946;  /* Deep burgundy highlight */
 
 /* Other basic settings for the template */
 $border-radius              : 4px;
@@ -34,22 +35,43 @@ $navicon-height             : 4px;
 $sidebar-link-max-width     : 250px;
 $sidebar-screen-min-width   : 1024px;
 
-/* Dark theme for the site */
+/* Light theme CSS variables */
 :root {
     --global-base-color                 : #{$background};
     --global-bg-color                   : #{$background};
     --global-footer-bg-color            : #{$footer};
     --global-border-color               : #{$light-primary-color};
     --global-dark-border-color          : #{$background-light};
-    --global-code-background-color      : #fafafa;
+    --global-code-background-color      : #f8fafc;
     --global-code-text-color            : #{$darker-primary-color};
     --global-fig-caption-color          : #{$light-primary-color};
     --global-link-color                 : #{$link};
-    --global-link-color-hover           : #{$link-dark};
+    --global-link-color-hover           : #{$highlight-color};
     --global-link-color-visited         : #{$link-light};
     --global-masthead-link-color        : #{$text};
-    --global-masthead-link-color-hover  : #{$link};
+    --global-masthead-link-color-hover  : #{$highlight-color};
     --global-text-color                 : #{$text};
-    --global-text-color-light           : #{$light-primary-color};
+    --global-text-color-light           : #6B7280;
     --global-thead-color                : #{$background-lighter};
+    --global-highlight-color            : #{$highlight-color};
 }
+
+/* Author profile link styling */
+.author__link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.author__link:hover {
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.8;
+}
+
+.author__link:hover .author__name {
+  color: var(--global-highlight-color);
+}
+
+/* Sidebar icons will use the global hover color from CSS variables */

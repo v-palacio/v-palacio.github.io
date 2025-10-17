@@ -3,19 +3,19 @@
    ========================================================================== */
 
 /* Color codes used for the theme */
-$primary-color              : #00adb5;
-$dark-primary-color         : mix(#000, $primary-color, 40%);
-$darker-primary-color       : mix(#000, $primary-color, 60%);
-$light-primary-color        : mix(#000, $primary-color, 50%);
+$primary-color              : #0047AB;  /* Cobalt */
+$dark-primary-color         : #003A8C;  /* Darker cobalt */
+$darker-primary-color       : #002D6B;  /* Darkest cobalt */
+$light-primary-color        : #60A5FA;  /* Bright Cornflower */
 
-$background                 : #252a34;
-$background-light           : mix(#fff, $background, 20%);
-$background-lighter         : mix(#fff, $background, 90%);
-$text                       : #eaeaea;
-$link                       : mix($primary-color, $text, 40%);
-$link-dark                  : mix(#000, $link, 25%);
-$link-light                 : mix(#fff, $link, 25%);
-$footer                     : mix(#000, $background, 30%);
+$background                 : #0A0F1C;  /* Very dark blue background */
+$background-light           : #111827;  /* Card background */
+$background-lighter         : #1F2937;  /* Light gray */
+$text                       : #E5E7EB;  /* Light text */
+$link                       : #60A5FA;  /* Bright Cornflower */
+$link-dark                  : #93C5FD;  /* Lighter blue */
+$link-light                 : #DBEAFE;  /* Very light blue */
+$footer                     : #111827;  /* Card background */
 
 /* Color codes used for the site */
 $danger-color               : #ee5f5b;
@@ -34,22 +34,119 @@ $navicon-height             : 4px;
 $sidebar-link-max-width     : 250px;
 $sidebar-screen-min-width   : 1024px;
 
-/* Dark theme for the site */
+/* Dark theme CSS variables */
 html[data-theme="dark"] {
     --global-base-color                 : #{$background};
     --global-bg-color                   : #{$background};
     --global-footer-bg-color            : #{$footer};
     --global-border-color               : #{$light-primary-color};
     --global-dark-border-color          : #{$background-light};
-    --global-code-background-color      : #fafafa;
-    --global-code-text-color            : #{$darker-primary-color};
+    --global-code-background-color      : #{$background-light};
+    --global-code-text-color            : #{$light-primary-color};
     --global-fig-caption-color          : #{$light-primary-color};
     --global-link-color                 : #{$link};
     --global-link-color-hover           : #{$link-dark};
     --global-link-color-visited         : #{$link-light};
     --global-masthead-link-color        : #{$text};
-    --global-masthead-link-color-hover  : #{$background-light};
+    --global-masthead-link-color-hover  : #{$link};
     --global-text-color                 : #{$text};
-    --global-text-color-light           : #{$light-primary-color};
+    --global-text-color-light           : #9CA3AF;
     --global-thead-color                : #{$background-lighter};
+    
+    /* Custom dark theme colors */
+    --color-bg: #0A0F1C;
+    --color-card: #111827;
+    --color-text: #E5E7EB;
+    --color-muted: #9CA3AF;
+    --color-accent: #0047AB;     /* Cobalt */
+    --color-accent-light: #60A5FA; /* Bright Cornflower */
+    --color-highlight: #FBBF24;  /* Amber */
+    
+    /* Apply custom styling */
+    body {
+        background-color: var(--color-bg);
+        color: var(--color-text);
+    }
+    
+    .masthead {
+        background-color: var(--color-card);
+        border-bottom: 1px solid var(--color-accent);
+    }
+    
+    .page__content {
+        background-color: var(--color-bg);
+    }
+    
+    .page__hero {
+        background-color: var(--color-card);
+    }
+    
+    /* Use amber for special highlights */
+    .notice--info {
+        background-color: var(--color-highlight);
+        color: var(--color-bg);
+    }
+    
+    /* Cobalt for headings */
+    h1, h2, h3, h4, h5, h6 {
+        color: var(--color-accent);
+    }
+    
+    /* Bright cornflower for links */
+    a {
+        color: var(--color-accent-light);
+    }
+    
+    a:hover {
+        color: var(--color-highlight);
+    }
+    
+    /* Author profile link styling for dark theme */
+    .author__link {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        transition: opacity 0.2s ease-in-out;
+    }
+    
+    .author__link:hover {
+        text-decoration: none;
+        color: inherit;
+        opacity: 0.8;
+    }
+    
+    .author__link:hover .author__name {
+        color: var(--color-accent-light);
+    }
+    
+    /* Fix GitHub icon visibility in dark theme */
+    .fab.fa-github {
+        color: var(--color-accent-light) !important;
+    }
+    
+    .fab.fa-github:hover {
+        color: var(--color-highlight) !important;
+    }
+    
+    /* Also target the GitHub icon in the sidebar */
+    .author__urls .fa-github {
+        color: var(--color-accent-light) !important;
+    }
+    
+    .author__urls .fa-github:hover {
+        color: var(--color-highlight) !important;
+    }
+    
+    /* General icon styling for dark theme */
+    .author__urls .fab,
+    .author__urls .fas,
+    .author__urls .ai {
+        color: var(--color-accent-light);
+    }
+    
+    .author__urls .fab:hover,
+    .author__urls .fas:hover,
+    .author__urls .ai:hover {
+        color: var(--color-highlight);
+    }
 }
