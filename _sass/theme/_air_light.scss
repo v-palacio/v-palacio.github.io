@@ -77,8 +77,8 @@ $sidebar-screen-min-width   : 1024px;
 /* Sidebar icons will use the global hover color from CSS variables */
 
 /* Auto-open external links in new tabs */
-a[href^="http://"]:not([href*="localhost"]):not([href*="127.0.0.1"]),
-a[href^="https://"]:not([href*="localhost"]):not([href*="127.0.0.1"]) {
+a[href^="http://"]:not([href*="localhost"]):not([href*="127.0.0.1"]):not([href*="github.io"]),
+a[href^="https://"]:not([href*="localhost"]):not([href*="127.0.0.1"]):not([href*="github.io"]) {
   &::after {
     content: " ↗";
     font-size: 0.8em;
