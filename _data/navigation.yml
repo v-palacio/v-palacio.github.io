@@ -13,9 +13,6 @@ main:
 
   - title: "Research"
     url: /research/ 
-    
-  - title: "Software"
-    url: /software/ 
 
   - title: "CV"
     url: /cv/

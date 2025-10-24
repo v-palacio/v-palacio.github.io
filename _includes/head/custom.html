@@ -36,4 +36,18 @@ h1, h2, h3, h4, h5, h6 {
 <link rel="icon" href="/images/favicon.ico"/>
 <meta name="theme-color" content="#ffffff"/>
 
+<!-- Auto-open external links in new tabs -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Find all external links
+    const externalLinks = document.querySelectorAll('a[href^="http://"]:not([href*="localhost"]):not([href*="127.0.0.1"]), a[href^="https://"]:not([href*="localhost"]):not([href*="127.0.0.1"])');
+    
+    // Add target="_blank" and rel="noopener noreferrer" to external links
+    externalLinks.forEach(function(link) {
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener noreferrer');
+    });
+});
+</script>
+
 <!-- end custom head snippets -->

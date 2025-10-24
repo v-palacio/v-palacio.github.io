@@ -149,4 +149,99 @@ html[data-theme="dark"] {
     .author__urls .ai:hover {
         color: var(--color-highlight);
     }
+    
+    /* Auto-open external links in new tabs */
+    a[href^="http://"]:not([href*="localhost"]):not([href*="127.0.0.1"]),
+    a[href^="https://"]:not([href*="localhost"]):not([href*="127.0.0.1"]) {
+        &::after {
+            content: " ↗";
+            font-size: 0.8em;
+            opacity: 0.7;
+        }
+    }
+    
+    /* Justified text alignment for main content */
+    .page__content,
+    .page__content p,
+    .page__content li,
+    .page__content dd,
+    .notice,
+    .notice p {
+        text-align: justify;
+        text-justify: inter-word; /* Better word spacing for justified text */
+    }
+    
+    .author__bio {
+        text-align: left;
+    }
+    
+    /* Ensure all links use the amber highlight color on hover */
+    a:hover {
+        color: var(--color-highlight) !important;
+    }
+    
+    /* Specific link hover styles */
+    .page__content a:hover,
+    .author__bio a:hover,
+    .notice a:hover {
+        color: var(--color-highlight) !important;
+    }
+    
+    /* Navigation links hover */
+    .masthead a:hover {
+        color: var(--color-highlight) !important;
+    }
+    
+    /* Increase gap between sidebar and main content */
+    .page {
+        @include breakpoint($large) {
+            margin-left: 2em; /* Increased gap between sidebar and content */
+        }
+    }
+    
+    /* Additional spacing for main content */
+    #main {
+        @include breakpoint($large) {
+            padding-left: 2em; /* Increased from 1em */
+        }
+    }
+    
+    /* Publication numbering */
+    .publication-item {
+        position: relative;
+        margin-left: 2em; /* Add space for numbers */
+    }
+    
+    .publication-item::before {
+        content: attr(data-number) ".";
+        position: absolute;
+        left: -2em;
+        font-size: 1em; /* Same size as regular text */
+        font-weight: bold;
+        color: var(--color-text); /* Same color as title */
+        line-height: 1.2;
+    }
+    
+    /* Publication title styling */
+    .archive__item-title {
+        text-decoration: none !important;
+        color: inherit !important;
+        font-size: 1em !important; /* Same size as regular text */
+        font-weight: bold !important; /* Keep bold */
+        margin-bottom: 1em !important; /* Normal paragraph spacing */
+    }
+    
+    /* Normal spacing for publication content */
+    .archive__item p {
+        margin-bottom: 1em !important; /* Normal paragraph spacing */
+    }
+    
+    .archive__item-excerpt {
+        margin-top: 0 !important; /* No extra spacing before excerpt */
+    }
+    
+    .archive__item-title:hover {
+        text-decoration: none !important;
+        color: inherit !important;
+    }
 }

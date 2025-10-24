@@ -1,0 +1,166 @@
+---
+layout: archive
+title: "Research"
+permalink: /research/
+author_profile: true
+---
+
+<div class="research-intro">
+  <p>I develop <strong>multiscale computational frameworks</strong> that connect molecular identity, interfacial structure, and macroscopic behavior in anisotropic soft materials. Drawing on continuum theory, coarse-grained simulations, and emerging data-science tools, my work addresses how orientational order and dynamics emerge—and how we can translate this understanding into the design of responsive soft systems.</p>
+</div>
+
+<h2>Research Themes</h2>
+
+<div class="research-themes">
+  <details class="research-theme">
+    <summary class="research-theme-title">
+      <strong>Multiscale Modeling of Liquid-Crystalline Systems</strong>
+    </summary>
+    <div class="research-theme-content">
+      <p>Liquid crystals provide a versatile platform for studying order, elasticity, and self-organization in soft matter. My research establishes <strong>multiscale models</strong> that bridge molecular chemistry to mesoscale structures and macroscopic response. By combining continuum theories with coarse-grained simulations, I quantify how chirality, curvature, and confinement drive defect formation and patterning. These models have revealed pathways for controlling morphology in chiral, confined, and hybrid liquid-crystalline systems.</p>
+      
+      <p><strong>Representative works:</strong></p>
+      <ul>
+        <li>Palacio-Betancur, V. <em>et al.</em> <em>Curvature and confinement effects on chiral liquid crystal morphologies.</em> <em>Soft Matter</em> (2023). <a href="https://doi.org/10.1039/d3sm00437f">doi:10.1039/d3sm00437f</a></li>
+        <li>Palacio-Betancur, V. <em>et al.</em> <em>Cuboidal liquid crystal phases under multiaxial geometrical frustration.</em> <em>Soft Matter</em> (2020). <a href="https://doi.org/10.1039/c9sm02021g">doi:10.1039/c9sm02021g</a></li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="research-theme">
+    <summary class="research-theme-title">
+      <strong>Nonequilibrium Structure and Dynamics</strong>
+    </summary>
+    <div class="research-theme-content">
+      <p>Many soft materials operate far from equilibrium, where flow, fields, and confinement couple to generate emergent order. I investigate <strong>nonequilibrium assembly</strong> and <strong>hydrodynamic effects</strong> in liquid-crystalline suspensions and nanocomposites, focusing on how these forces can be harnessed to direct structure formation. My work has shown how hydrodynamic fields and boundary constraints mediate the dynamic organization of colloidal and molecular systems, providing design principles for active and adaptive materials.</p>
+      
+      <p><strong>Representative works:</strong></p>
+      <ul>
+        <li>Villada-Gil, S.*, Palacio-Betancur, V.* <em>et al.</em> <em>Directing the far-from-equilibrium assembly of nanoparticles in confined liquid crystals by hydrodynamic fields.</em> <em>Soft Matter</em> (2021). <a href="https://doi.org/10.1039/d0ss02221g">doi:10.1039/d0ss02221g</a></li>
+        <li>Gharbi, I., Palacio-Betancur, V. <em>et al.</em> <em>Liquid crystal films as active substrates for nanoparticle control.</em> <em>ACS Applied Nano Materials</em> (2021). <a href="https://doi.org/10.1021/acsanm.1c00680">doi:10.1021/acsanm.1c00680</a></li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="research-theme">
+    <summary class="research-theme-title">
+      <strong>Computational Tools and Graph-Based Molecular Frameworks</strong>
+    </summary>
+    <div class="research-theme-content">
+      <p>To enable reproducible, quantitative comparison between computation and experiment, I develop <strong>open-source tools</strong> that bridge simulation, theory, and data representation.</p>
+      
+      <p>The <strong>LCPOM</strong> package reconstructs polarized optical microscopy (POM) images from director fields obtained in simulations, enabling one-to-one visual and quantitative comparison with experiments.</p>
+      
+      <p>In my postdoc, I introduced <strong>graph-theoretic molecular descriptors</strong> that encode the topology of molecular charge distributions. This approach links quantum-level electrostatics to macroscopic polarity and phase behavior, providing interpretable features for machine learning and predictive design of polar nematic materials.</p>
+      
+      <p><strong>Representative works:</strong></p>
+      <ul>
+        <li>Chen, C., Palacio-Betancur, V. <em>et al.</em> <em>LCPOM: Precise reconstruction of polarized optical microscopy images of liquid crystals.</em> <em>Chemistry of Materials</em> (2024). <a href="https://doi.org/10.1021/acs.chemmater.3c02425">doi:10.1021/acs.chemmater.3c02425</a></li>
+        <li>Palacio-Betancur, V., Jackson, N. E. <em>Molecular charge topologies govern polar nematic ordering.</em> Submitted to <em>JACS</em> (2025).</li>
+      </ul>
+    </div>
+  </details>
+</div>
+
+<h2>Research Vision & Next Steps</h2>
+
+<p>My future research program will build on these foundations to establish <strong>data-driven theoretical frameworks</strong> for nonequilibrium soft materials and to expand computational tools that integrate simulation, experiment, and molecular informatics. I aim to advance <strong>open, reproducible modeling environments</strong> that connect diverse characterization techniques—bridging physical insight and materials design across scales, from functional films to biomimetic and food-based soft matter.</p>
+
+<h3>Explore More</h3>
+<ul>
+  <li><a href="/publications">Full Publications List</a></li>
+</ul>
+
+<style>
+.research-intro {
+  margin-bottom: 2em;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+.research-themes {
+  margin: 2em 0;
+}
+
+.research-theme {
+  margin-bottom: 1.5em;
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.research-theme-title {
+  background: var(--accent-color, #0047AB);
+  color: white;
+  padding: 1em 1.5em;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: 600;
+  margin: 0;
+  list-style: none;
+  transition: background-color 0.2s ease;
+}
+
+.research-theme-title:hover {
+  background: var(--accent-hover, #2563EB);
+}
+
+/* Ensure title is always blue regardless of open/closed state */
+.research-theme summary {
+  background: var(--accent-color, #0047AB) !important;
+  color: white !important;
+}
+
+.research-theme summary:hover {
+  background: var(--accent-hover, #2563EB) !important;
+}
+
+.research-theme-title::-webkit-details-marker {
+  display: none;
+}
+
+.research-theme-title::before {
+  content: "▶";
+  margin-right: 0.5em;
+  transition: transform 0.2s ease;
+}
+
+.research-theme[open] .research-theme-title::before {
+  transform: rotate(90deg);
+}
+
+.research-theme-content {
+  padding: 1.5em;
+  line-height: 1.6;
+}
+
+.research-theme-content p {
+  margin-bottom: 1em;
+}
+
+.research-theme-content ul {
+  margin: 1em 0;
+  padding-left: 1.5em;
+}
+
+.research-theme-content li {
+  margin-bottom: 0.5em;
+}
+
+.research-theme-content a {
+  color: var(--link-color, #0047AB);
+  text-decoration: none;
+}
+
+.research-theme-content a:hover {
+  text-decoration: underline;
+  color: var(--link-hover, #2563EB);
+}
+
+/* Dark theme support */
+@media (prefers-color-scheme: dark) {
+  .research-theme {
+    border-color: var(--border-color, #374151);
+  }
+}
+</style>
