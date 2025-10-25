@@ -48,9 +48,9 @@ document.addEventListener('DOMContentLoaded', function() {
         link.setAttribute('rel', 'noopener noreferrer');
     });
 
-    // Contact dropdown functionality (sidebar button)
-    const contactBtn = document.querySelector('.author__urls-wrapper button');
-    const contactDropdown = document.querySelector('.author__urls');
+    // Contact dropdown functionality (navigation button)
+    const contactBtn = document.querySelector('.contact-btn');
+    const contactDropdown = document.getElementById('contact-dropdown');
 
     if (contactBtn && contactDropdown) {
         // Toggle dropdown on click
