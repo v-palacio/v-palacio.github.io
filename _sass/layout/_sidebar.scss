@@ -200,11 +200,12 @@
   box-shadow: 0 0 10px rgba(#000, 0.25);
   cursor: default;
 
-  /* Mobile positioning - align with headshot */
+  /* Mobile positioning - align with Contact button */
   @include breakpoint($medium) {
     left: 0;
     right: auto;
     min-width: 200px;
+    width: 250px;
   }
 
   @include breakpoint($large) {
@@ -232,9 +233,9 @@
     border-color: var(--global-border-color) transparent;
     z-index: 0;
 
-    /* Mobile positioning - align arrow with left side */
+    /* Mobile positioning - align arrow with Contact button */
     @include breakpoint($medium) {
-      left: 20px;
+      left: 15px;
     }
 
     @include breakpoint($large) {
@@ -254,9 +255,9 @@
     border-color: #fff transparent;
     z-index: 1;
 
-    /* Mobile positioning - align arrow with left side */
+    /* Mobile positioning - align arrow with Contact button */
     @include breakpoint($medium) {
-      left: 20px;
+      left: 15px;
     }
 
     @include breakpoint($large) {
