@@ -15,37 +15,8 @@
             {% endif %}
             <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
           {% endfor %}
-          <li id="contact-toggle" class="masthead__menu-item persist tail">
-            <button class="btn btn--inverse contact-btn">Contact</button>
-            <!-- Contact dropdown menu -->
-            <div class="contact-dropdown" id="contact-dropdown">
-              <div class="contact-dropdown__content">
-                {% if author.email %}
-                  <a href="mailto:{{ author.email }}"><i class="fas fa-fw fa-envelope"></i>Email</a>
-                {% endif %}
-                {% if author.googlescholar %}
-                  <a href="{{ author.googlescholar }}"><i class="ai ai-google-scholar"></i>Google Scholar</a>
-                {% endif %}
-                {% if author.github %}
-                  <a href="https://github.com/{{ author.github }}"><i class="fab fa-fw fa-github"></i>GitHub</a>
-                {% endif %}
-                {% if author.linkedin %}
-                  <a href="https://www.linkedin.com/in/{{ author.linkedin }}"><i class="fab fa-fw fa-linkedin"></i>LinkedIn</a>
-                {% endif %}
-                {% if author.orcid %}
-                  <a href="{{ author.orcid }}"><i class="ai ai-orcid"></i>ORCID</a>
-                {% endif %}
-                {% if author.employer %}
-                  <span><i class="fas fa-fw fa-building-columns"></i>{{ author.employer }}</span>
-                {% endif %}
-                {% if author.location %}
-                  <span><i class="fas fa-fw fa-location-dot"></i>{{ author.location }}</span>
-                {% endif %}
-                {% if author.uri %}
-                  <a href="{{ author.uri }}"><i class="fas fa-fw fa-link"></i>Website</a>
-                {% endif %}
-              </div>
-            </div>
+          <li id="theme-toggle" class="masthead__menu-item persist tail">
+            <a role="button" aria-labelledby="theme-icon"><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="toggle theme"></i></a>
           </li>
         </ul>
         <ul class="hidden-links hidden"></ul>

@@ -48,40 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
         link.setAttribute('rel', 'noopener noreferrer');
     });
 
-    // Contact dropdown functionality (navigation button)
-    const contactBtn = document.querySelector('.contact-btn');
-    const contactDropdown = document.getElementById('contact-dropdown');
-
-    if (contactBtn && contactDropdown) {
-        // Toggle dropdown on click
-        contactBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            contactDropdown.classList.toggle('show');
-        });
-
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!contactBtn.contains(e.target) && !contactDropdown.contains(e.target)) {
-                contactDropdown.classList.remove('show');
-            }
-        });
-
-        // Close dropdown on escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && contactDropdown.classList.contains('show')) {
-                contactDropdown.classList.remove('show');
-            }
-        });
-
-        // Close dropdown when clicking on dropdown links
-        const dropdownLinks = contactDropdown.querySelectorAll('a');
-        dropdownLinks.forEach(function(link) {
-            link.addEventListener('click', function() {
-                contactDropdown.classList.remove('show');
-            });
-        });
-    }
 });
 </script>
 
