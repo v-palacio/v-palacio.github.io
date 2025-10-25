@@ -13,6 +13,11 @@
   @include clearfix();
   margin-bottom: 1em;
 
+  /* Hide sidebar on mobile for all pages except About */
+  @include breakpoint($medium) {
+    display: none;
+  }
+
   @media (orientation: portrait) {
     margin-top: 1em;
   }
@@ -282,5 +287,59 @@
     &:hover {
       text-decoration: underline;
     }
+  }
+}
+
+/*
+   Mobile author profile (About page only)
+   ========================================================================== */
+
+.mobile-author-profile {
+  display: none;
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 2rem 1rem;
+  background: var(--global-bg-color);
+  border-radius: 12px;
+  border: 1px solid var(--global-border-color);
+
+  @include breakpoint($medium) {
+    display: block;
+  }
+
+  @include breakpoint($large) {
+    display: none;
+  }
+}
+
+.mobile-author__avatar {
+  margin-bottom: 1.5rem;
+
+  img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--global-border-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.mobile-author__content {
+  .mobile-author__name {
+    margin: 0 0 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--global-text-color);
+    font-family: $serif;
+  }
+
+  .mobile-author__bio {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--global-text-color-light);
+    max-width: 400px;
+    margin: 0 auto;
   }
 }
