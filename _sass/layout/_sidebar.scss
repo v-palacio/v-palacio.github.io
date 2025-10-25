@@ -179,6 +179,17 @@
 
   button {
     margin-bottom: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    min-width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     @include breakpoint($large) {
       display: none;
