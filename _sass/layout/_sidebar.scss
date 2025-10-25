@@ -13,6 +13,11 @@
   @include clearfix();
   margin-bottom: 1em;
 
+  /* Hide sidebar on mobile since we now have popup menu */
+  @include breakpoint($medium) {
+    display: none;
+  }
+
   @media (orientation: portrait) {
     margin-top: 1em;
   }
@@ -200,6 +205,13 @@
   box-shadow: 0 0 10px rgba(#000, 0.25);
   cursor: default;
 
+  /* Mobile positioning - align with headshot */
+  @include breakpoint($medium) {
+    left: 0;
+    right: auto;
+    min-width: 200px;
+  }
+
   @include breakpoint($large) {
     display: block;
     position: relative;
@@ -208,6 +220,9 @@
     border: 0;
     background: transparent;
     box-shadow: none;
+    left: auto;
+    right: auto;
+    min-width: auto;
   }
 
   &:before {
@@ -221,6 +236,11 @@
     border-width: 0 10px 10px;
     border-color: var(--global-border-color) transparent;
     z-index: 0;
+
+    /* Mobile positioning - align arrow with left side */
+    @include breakpoint($medium) {
+      left: 20px;
+    }
 
     @include breakpoint($large) {
       display: none;
@@ -238,6 +258,11 @@
     border-width: 0 10px 10px;
     border-color: #fff transparent;
     z-index: 1;
+
+    /* Mobile positioning - align arrow with left side */
+    @include breakpoint($medium) {
+      left: 20px;
+    }
 
     @include breakpoint($large) {
       display: none;
