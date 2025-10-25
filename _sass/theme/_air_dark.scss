@@ -244,4 +244,14 @@ html[data-theme="dark"] {
         text-decoration: none !important;
         color: inherit !important;
     }
+    
+    /* Fix navicon visibility in dark theme */
+    .navicon {
+        background: var(--color-text) !important;
+        
+        &:before,
+        &:after {
+            background: var(--color-text) !important;
+        }
+    }
 }
