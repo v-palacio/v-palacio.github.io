@@ -13,11 +13,6 @@
   @include clearfix();
   margin-bottom: 1em;
 
-  /* Hide sidebar on mobile since we now have popup menu */
-  @include breakpoint($medium) {
-    display: none;
-  }
-
   @media (orientation: portrait) {
     margin-top: 1em;
   }

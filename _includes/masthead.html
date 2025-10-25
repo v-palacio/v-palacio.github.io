@@ -6,50 +6,7 @@
       <nav id="site-nav" class="greedy-nav">
         <button><div class="navicon"></div></button>
         <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg persist">
-            <a href="{{ base_path }}/" class="author-name-link">{{ site.title }}</a>
-            <!-- Author popup menu -->
-            <div class="author-popup" id="author-popup">
-              <div class="author-popup__content">
-                <div class="author-popup__avatar">
-                  {% if author.avatar contains "://" %}
-                    <img src="{{ author.avatar }}" alt="{{ author.name }}" />
-                  {% else %}
-                    <img src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" alt="{{ author.name }}" />
-                  {% endif %}
-                </div>
-                <div class="author-popup__info">
-                  {% if author.bio %}<p class="author-popup__bio">{{ author.bio }}</p>{% endif %}
-                </div>
-                <div class="author-popup__links">
-                  {% if author.email %}
-                    <a href="mailto:{{ author.email }}"><i class="fas fa-fw fa-envelope"></i>Email</a>
-                  {% endif %}
-                  {% if author.googlescholar %}
-                    <a href="{{ author.googlescholar }}"><i class="ai ai-google-scholar"></i>Google Scholar</a>
-                  {% endif %}
-                  {% if author.github %}
-                    <a href="https://github.com/{{ author.github }}"><i class="fab fa-fw fa-github"></i>GitHub</a>
-                  {% endif %}
-                  {% if author.linkedin %}
-                    <a href="https://www.linkedin.com/in/{{ author.linkedin }}"><i class="fab fa-fw fa-linkedin"></i>LinkedIn</a>
-                  {% endif %}
-                  {% if author.orcid %}
-                    <a href="{{ author.orcid }}"><i class="ai ai-orcid"></i>ORCID</a>
-                  {% endif %}
-                  {% if author.employer %}
-                    <span><i class="fas fa-fw fa-building-columns"></i>{{ author.employer }}</span>
-                  {% endif %}
-                  {% if author.location %}
-                    <span><i class="fas fa-fw fa-location-dot"></i>{{ author.location }}</span>
-                  {% endif %}
-                  {% if author.uri %}
-                    <a href="{{ author.uri }}"><i class="fas fa-fw fa-link"></i>Website</a>
-                  {% endif %}
-                </div>
-              </div>
-            </div>
-          </li>
+          <li class="masthead__menu-item masthead__menu-item--lg persist"><a href="{{ base_path }}/">{{ site.title }}</a></li>
           {% for link in site.data.navigation.main %}
             {% if link.url contains 'http' %}
               {% assign domain = '' %}
