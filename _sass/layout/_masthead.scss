@@ -9,6 +9,12 @@
   top: 0;
   width: 100%;
 
+  /* Reduce height on mobile */
+  @media screen and (max-width: 924px) {
+    height: auto;
+    min-height: 2.5rem;
+  }
+
   -webkit-animation: intro 0.3s both;
           animation: intro 0.3s both;
   -webkit-animation-delay: 0.15s;
@@ -29,6 +35,11 @@
     @include clearfix;
     padding: 0.5em 1em;
     font-family: $sans-serif-narrow;
+
+    /* Reduce padding on mobile */
+    @media screen and (max-width: 924px) {
+      padding: 0.25em 0.5em;
+    }
 
     @include breakpoint($x-large) {
       max-width: $x-large;

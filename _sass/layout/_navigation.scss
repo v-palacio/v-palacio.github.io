@@ -200,6 +200,11 @@
     color: #fff;
     cursor: pointer;
     z-index: 100;
+    
+    /* Hide hamburger menu on desktop */
+    @include breakpoint($large) {
+      display: none;
+    }
   }
 
 }
