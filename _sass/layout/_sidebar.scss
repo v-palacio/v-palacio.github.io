@@ -18,6 +18,10 @@
     display: none;
   }
 
+  @include breakpoint($large) {
+    display: block;
+  }
+
   @media (orientation: portrait) {
     margin-top: 1em;
   }
