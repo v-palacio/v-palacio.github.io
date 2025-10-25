@@ -179,9 +179,9 @@
 
   button {
     margin-bottom: 0;
-    position: absolute !important;
-    right: 0 !important;
-    top: 0 !important;
+    position: fixed !important;
+    right: 0.5rem !important;
+    top: 0.5rem !important;
     padding: 0.5rem;
     font-size: 1.2rem;
     font-weight: bold;
