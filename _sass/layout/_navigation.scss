@@ -202,8 +202,11 @@
     z-index: 100;
   }
 
-  .visible-links {
+}
+
+.visible-links {
     display: table;
+
 
     li {
       display: table-cell;
@@ -260,7 +263,7 @@
     }
   }
 
-  .hidden-links {
+.hidden-links {
     position: absolute;
     top: 100%;
     right: 0;
@@ -317,7 +320,6 @@
       }
     }
   }
-}
 
 
 /*
