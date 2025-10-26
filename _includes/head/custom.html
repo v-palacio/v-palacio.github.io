@@ -51,6 +51,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // No scroll indicators - clean horizontal scroll navigation
 
 });
+
+// Remove GA tracking parameters from the URL
+if (window.location.search.includes("_gl=")) {
+  const cleanUrl = window.location.origin + window.location.pathname;
+  window.history.replaceState({}, document.title, cleanUrl);
+}
+
 </script>
 
 <!-- end custom head snippets -->
