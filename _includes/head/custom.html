@@ -52,11 +52,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-// Remove GA tracking parameters from the URL
-if (window.location.search.includes("_gl=")) {
-  const cleanUrl = window.location.origin + window.location.pathname;
-  window.history.replaceState({}, document.title, cleanUrl);
+// Remove Google Analytics and other tracking parameters from URLs
+function cleanTrackingParameters() {
+    const url = new URL(window.location);
+    const trackingParams = [
+        '_gl', '_ga', '_gid', '_gclid', '_gclsrc', 
+        'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content',
+        'fbclid', 'gclid', 'msclkid', 'twclid'
+    ];
+    
+    let hasTrackingParams = false;
+    trackingParams.forEach(param => {
+        if (url.searchParams.has(param)) {
+            url.searchParams.delete(param);
+            hasTrackingParams = true;
+        }
+    });
+    
+    if (hasTrackingParams) {
+        const cleanUrl = url.origin + url.pathname + (url.search || '');
+        window.history.replaceState({}, document.title, cleanUrl);
+    }
 }
+
+// Run immediately and on page load
+cleanTrackingParameters();
 
 </script>
 
