@@ -192,18 +192,22 @@
   button {
     position: absolute;
     height: 2.5rem;
+    width: 2.5rem;
     right: 0;
-    padding: 0 0.5rem;
+    padding: 0;
     border: 0;
     outline: none;
     background-color: var(--global-base-color);
     color: #fff;
     cursor: pointer;
     z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
     /* Show hamburger menu on smaller screens */
     @media screen and (max-width: 1024px) {
-      display: block;
+      display: flex;
     }
     
     /* Hide hamburger menu on desktop */

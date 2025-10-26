@@ -52,11 +52,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamburgerButton = document.querySelector('#site-nav button');
     const hiddenLinks = document.querySelector('#site-nav .hidden-links');
     
+    console.log('Hamburger button found:', hamburgerButton);
+    console.log('Hidden links found:', hiddenLinks);
+    
     if (hamburgerButton && hiddenLinks) {
-        hamburgerButton.addEventListener('click', function() {
+        console.log('Adding click listener to hamburger button');
+        hamburgerButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Hamburger button clicked');
             hiddenLinks.classList.toggle('hidden');
             hamburgerButton.classList.toggle('close');
         });
+    } else {
+        console.log('Hamburger button or hidden links not found');
     }
 
 });
