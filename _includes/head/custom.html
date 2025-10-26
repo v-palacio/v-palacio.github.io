@@ -48,6 +48,17 @@ document.addEventListener('DOMContentLoaded', function() {
         link.setAttribute('rel', 'noopener noreferrer');
     });
 
+    // Hamburger menu functionality
+    const hamburgerButton = document.querySelector('#site-nav button');
+    const hiddenLinks = document.querySelector('#site-nav .hidden-links');
+    
+    if (hamburgerButton && hiddenLinks) {
+        hamburgerButton.addEventListener('click', function() {
+            hiddenLinks.classList.toggle('hidden');
+            hamburgerButton.classList.toggle('close');
+        });
+    }
+
 });
 </script>
 
