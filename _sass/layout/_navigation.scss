@@ -294,7 +294,7 @@
     background: #fff;
     box-shadow: 0 0 10px rgba(#000, 0.25);
     
-    /* Hide by default, show when toggled */
+    /* Hide by default */
     &.hidden {
       display: none;
     }
@@ -302,7 +302,7 @@
     /* Show when not hidden (mobile menu) */
     &:not(.hidden) {
       @media screen and (max-width: 1024px) {
-        display: block;
+        display: block !important;
         position: fixed;
         top: 100%;
         left: 0;
@@ -322,6 +322,9 @@
       margin: 0;
       padding: 10px 20px;
       font-size: $type-size-5;
+      display: block;
+      color: var(--global-masthead-link-color);
+      text-decoration: none;
 
       &:hover {
         color: var(--global-masthead-link-color-hover);

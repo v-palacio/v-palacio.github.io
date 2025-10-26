@@ -60,7 +60,9 @@ document.addEventListener('DOMContentLoaded', function() {
         hamburgerButton.addEventListener('click', function(e) {
             e.preventDefault();
             console.log('Hamburger button clicked');
+            console.log('Hidden links before toggle:', hiddenLinks.classList.contains('hidden'));
             hiddenLinks.classList.toggle('hidden');
+            console.log('Hidden links after toggle:', hiddenLinks.classList.contains('hidden'));
             hamburgerButton.classList.toggle('close');
         });
     } else {
