@@ -53,31 +53,51 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Remove Google Analytics and other tracking parameters from URLs
-function cleanTrackingParameters() {
-    const url = new URL(window.location);
-    const trackingParams = [
-        '_gl', '_ga', '_gid', '_gclid', '_gclsrc', 
-        'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content',
-        'fbclid', 'gclid', 'msclkid', 'twclid'
-    ];
-    
-    let hasTrackingParams = false;
-    trackingParams.forEach(param => {
-        if (url.searchParams.has(param)) {
-            url.searchParams.delete(param);
-            hasTrackingParams = true;
+<!-- Clean tracking/query params from URL on load and navigation -->
+<script>
+(function () {
+  const TRACKING_KEYS = new Set([
+    '_gl','_ga','_gid','_gclid','_gclsrc','gclid','fbclid','msclkid','twclid',
+  ]);
+
+  function isTrackingParam(key) {
+    return TRACKING_KEYS.has(key) || key.toLowerCase().startsWith('utm_');
+  }
+
+  function cleanURL() {
+    try {
+      const url = new URL(window.location.href);
+      let changed = false;
+
+      // Remove known tracking parameters only
+      for (const [key] of url.searchParams) {
+        if (isTrackingParam(key)) {
+          url.searchParams.delete(key);
+          changed = true;
         }
-    });
-    
-    if (hasTrackingParams) {
-        const cleanUrl = url.origin + url.pathname + (url.search || '');
-        window.history.replaceState({}, document.title, cleanUrl);
+      }
+
+      if (changed) {
+        // Preserve origin, path, and hash; drop the (now empty) search string
+        const clean = url.origin + url.pathname + (url.hash || '');
+        window.history.replaceState({}, document.title, clean);
+      }
+    } catch (e) {
+      // no-op if URL parsing fails
     }
-}
+  }
 
-// Run immediately and on page load
-cleanTrackingParameters();
+  // Run ASAP (before DOM load), then on DOM ready, page show, and after SPA-like navs
+  cleanURL();
+  document.addEventListener('DOMContentLoaded', cleanURL);
+  window.addEventListener('pageshow', cleanURL);
 
+  // In case your theme uses pushState for in-page nav, patch history methods
+  const _push = history.pushState;
+  const _replace = history.replaceState;
+  history.pushState = function () { _push.apply(this, arguments); cleanURL(); };
+  history.replaceState = function () { _replace.apply(this, arguments); cleanURL(); };
+})();
 </script>
 
 <!-- end custom head snippets -->
