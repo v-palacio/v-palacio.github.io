@@ -48,53 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
         link.setAttribute('rel', 'noopener noreferrer');
     });
 
-    // Navigation scroll detection for fade effect
-    const visibleLinks = document.querySelector('.visible-links');
-    
-    if (visibleLinks) {
-        // Create fade element dynamically
-        const fadeElement = document.createElement('div');
-        fadeElement.className = 'navigation-fade';
-        fadeElement.style.cssText = `
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 50px;
-            background: linear-gradient(to left, var(--global-bg-color) 0%, rgba(0,0,0,0.1) 50%, transparent 100%);
-            pointer-events: none;
-            z-index: 1000;
-            box-shadow: inset -20px 0 20px -10px rgba(0,0,0,0.1);
-            opacity: 0;
-            transition: opacity 0.3s ease, height 0.3s ease;
-        `;
-        document.body.appendChild(fadeElement);
-        
-        // Function to update fade height based on masthead
-        function updateFadeHeight() {
-            const masthead = document.querySelector('.masthead');
-            if (masthead && fadeElement) {
-                const mastheadHeight = masthead.offsetHeight;
-                fadeElement.style.height = mastheadHeight + 'px';
-            }
-        }
-        
-        // Update fade height on load and resize
-        updateFadeHeight();
-        window.addEventListener('resize', updateFadeHeight);
-        
-        visibleLinks.addEventListener('scroll', function() {
-            const scrollLeft = this.scrollLeft;
-            const scrollWidth = this.scrollWidth;
-            const clientWidth = this.clientWidth;
-            
-            // Show/hide fade based on scroll
-            if (scrollLeft > 0 || scrollWidth > clientWidth) {
-                fadeElement.style.opacity = '1';
-            } else {
-                fadeElement.style.opacity = '0';
-            }
-        });
-    }
+    // No scroll indicators - clean horizontal scroll navigation
 
 });
 </script>

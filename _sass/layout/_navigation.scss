@@ -211,7 +211,7 @@
       display: none;
     }
 
-    /* Fade effect now handled by JavaScript for dynamic height */
+    /* No fade effect - clean horizontal scroll */
 
     /* Keep all navigation items visible and allow horizontal scroll */
     @media screen and (max-width: 1024px) {
