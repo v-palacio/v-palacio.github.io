@@ -201,6 +201,11 @@
     cursor: pointer;
     z-index: 100;
     
+    /* Show hamburger menu on smaller screens */
+    @media screen and (max-width: 1024px) {
+      display: block;
+    }
+    
     /* Hide hamburger menu on desktop */
     @include breakpoint($large) {
       display: none;
@@ -212,10 +217,24 @@
 .visible-links {
     display: table;
 
+    /* Make navigation responsive on smaller screens */
+    @media screen and (max-width: 1024px) {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow: hidden;
+    }
 
     li {
       display: table-cell;
       vertical-align: middle;
+      
+      /* Make navigation items smaller on smaller screens */
+      @media screen and (max-width: 1024px) {
+        display: inline-block;
+        font-size: 0.9em;
+        padding: 0.25rem 0.5rem;
+        white-space: nowrap;
+      }
 
       &:first-child {
         font-weight: bold;

@@ -21,12 +21,9 @@ I'm always interested in discussing research collaborations, academic opportunit
 
 **ORCID:** [0000-0002-1234-5678](https://orcid.org/0000-0002-1234-5678)
 
-## Institution & Location
-**Address:**
-* 405 N. Mathews Ave. 3261 Beckman Institute. Urbana, IL 61801
-* 505 S. Mathews Ave. 350F Noyes Lab. Urbana, IL 61801
+## Address
+- ***Beckman***: 405 N. Mathews Ave. 3261 Beckman Institute
+- ***Chemistry***: 505 S. Mathews Ave. 350F Noyes Lab  
 
-**Institution:** University of Illinois Urbana-Champaign
-
-
-
+University of Illinois Urbana-Champaign  
+Urbana, IL, USA 61801
