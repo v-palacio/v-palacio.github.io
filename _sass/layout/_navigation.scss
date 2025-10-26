@@ -204,11 +204,14 @@
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE and Edge */
+    position: relative;
 
     /* Hide scrollbar for webkit browsers */
     &::-webkit-scrollbar {
       display: none;
     }
+
+    /* Fade effect now handled by JavaScript for dynamic height */
 
     /* Keep all navigation items visible and allow horizontal scroll */
     @media screen and (max-width: 1024px) {

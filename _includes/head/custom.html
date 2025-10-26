@@ -48,42 +48,52 @@ document.addEventListener('DOMContentLoaded', function() {
         link.setAttribute('rel', 'noopener noreferrer');
     });
 
-    // Hamburger menu functionality
-    const hamburgerButton = document.querySelector('#site-nav button');
-    const hiddenLinks = document.querySelector('#site-nav .hidden-links');
+    // Navigation scroll detection for fade effect
+    const visibleLinks = document.querySelector('.visible-links');
     
-    console.log('Hamburger button found:', hamburgerButton);
-    console.log('Hidden links found:', hiddenLinks);
-    console.log('Hidden links classes:', hiddenLinks ? hiddenLinks.className : 'N/A');
-    console.log('Hidden links computed style:', hiddenLinks ? window.getComputedStyle(hiddenLinks).display : 'N/A');
-    
-    if (hamburgerButton && hiddenLinks) {
-        console.log('Adding click listener to hamburger button');
-        hamburgerButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            console.log('Hamburger button clicked');
-            console.log('Hidden links before toggle:', hiddenLinks.classList.contains('hidden'));
-            console.log('Hidden links classes before toggle:', hiddenLinks.className);
+    if (visibleLinks) {
+        // Create fade element dynamically
+        const fadeElement = document.createElement('div');
+        fadeElement.className = 'navigation-fade';
+        fadeElement.style.cssText = `
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 50px;
+            background: linear-gradient(to left, var(--global-bg-color) 0%, rgba(0,0,0,0.1) 50%, transparent 100%);
+            pointer-events: none;
+            z-index: 1000;
+            box-shadow: inset -20px 0 20px -10px rgba(0,0,0,0.1);
+            opacity: 0;
+            transition: opacity 0.3s ease, height 0.3s ease;
+        `;
+        document.body.appendChild(fadeElement);
+        
+        // Function to update fade height based on masthead
+        function updateFadeHeight() {
+            const masthead = document.querySelector('.masthead');
+            if (masthead && fadeElement) {
+                const mastheadHeight = masthead.offsetHeight;
+                fadeElement.style.height = mastheadHeight + 'px';
+            }
+        }
+        
+        // Update fade height on load and resize
+        updateFadeHeight();
+        window.addEventListener('resize', updateFadeHeight);
+        
+        visibleLinks.addEventListener('scroll', function() {
+            const scrollLeft = this.scrollLeft;
+            const scrollWidth = this.scrollWidth;
+            const clientWidth = this.clientWidth;
             
-            hiddenLinks.classList.toggle('hidden');
-            hiddenLinks.classList.toggle('mobile-menu-open');
-            
-            console.log('Hidden links after toggle:', hiddenLinks.classList.contains('hidden'));
-            console.log('Hidden links classes after toggle:', hiddenLinks.className);
-            console.log('Hidden links computed style after toggle:', window.getComputedStyle(hiddenLinks).display);
-            console.log('Hidden links position after toggle:', window.getComputedStyle(hiddenLinks).position);
-            console.log('Hidden links top after toggle:', window.getComputedStyle(hiddenLinks).top);
-            console.log('Hidden links width after toggle:', window.getComputedStyle(hiddenLinks).width);
-            console.log('Hidden links height after toggle:', window.getComputedStyle(hiddenLinks).height);
-            
-            // Don't toggle close class for now, just focus on menu
-            // hamburgerButton.classList.toggle('close');
-            console.log('Button classes after toggle:', hamburgerButton.className);
-            console.log('Button computed style after toggle:', window.getComputedStyle(hamburgerButton).display);
-            console.log('Button visibility after toggle:', window.getComputedStyle(hamburgerButton).visibility);
+            // Show/hide fade based on scroll
+            if (scrollLeft > 0 || scrollWidth > clientWidth) {
+                fadeElement.style.opacity = '1';
+            } else {
+                fadeElement.style.opacity = '0';
+            }
         });
-    } else {
-        console.log('Hamburger button or hidden links not found');
     }
 
 });
