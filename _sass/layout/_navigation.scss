@@ -217,24 +217,14 @@
 .visible-links {
     display: table;
 
-    /* Make navigation responsive on smaller screens */
+    /* Hide navigation items on smaller screens */
     @media screen and (max-width: 1024px) {
-      display: flex;
-      flex-wrap: nowrap;
-      overflow: hidden;
+      display: none;
     }
 
     li {
       display: table-cell;
       vertical-align: middle;
-      
-      /* Make navigation items smaller on smaller screens */
-      @media screen and (max-width: 1024px) {
-        display: inline-block;
-        font-size: 0.9em;
-        padding: 0.25rem 0.5rem;
-        white-space: nowrap;
-      }
 
       &:first-child {
         font-weight: bold;
@@ -297,6 +287,22 @@
     border-radius: $border-radius;
     background: #fff;
     box-shadow: 0 0 10px rgba(#000, 0.25);
+    
+    /* Show hidden links on smaller screens */
+    @media screen and (max-width: 1024px) {
+      display: block;
+      position: fixed;
+      top: 100%;
+      left: 0;
+      right: 0;
+      width: 100%;
+      margin-top: 0;
+      border-radius: 0;
+      background: var(--global-bg-color);
+      border: none;
+      border-top: 1px solid var(--global-border-color);
+      box-shadow: none;
+    }
 
     a {
       margin: 0;
