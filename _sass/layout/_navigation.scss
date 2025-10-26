@@ -217,13 +217,20 @@
 .visible-links {
     display: table;
 
+    /* Hide navigation items on mobile, keep only site title */
+    @media screen and (max-width: 1024px) {
+      li:not(.masthead__menu-item--lg) {
+        display: none;
+      }
+    }
+
     li {
       display: table-cell;
       vertical-align: middle;
 
       &:first-child {
         font-weight: bold;
-        text-wrap: wrap;
+        white-space: nowrap;
 
         a {
           margin-left: 0;
