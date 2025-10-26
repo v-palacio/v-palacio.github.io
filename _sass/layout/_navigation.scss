@@ -190,47 +190,36 @@
   }
 
   button {
-    position: absolute;
-    height: 2.5rem;
-    width: 2.5rem;
-    right: 0;
-    padding: 0;
-    border: 0;
-    outline: none;
-    background-color: var(--global-base-color);
-    color: #fff;
-    cursor: pointer;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    /* Show hamburger menu on smaller screens */
-    @media screen and (max-width: 1024px) {
-      display: flex;
-    }
-    
-    /* Hide hamburger menu on desktop */
-    @include breakpoint($large) {
-      display: none;
-    }
+    /* Hide hamburger button completely */
+    display: none !important;
   }
 
 }
 
 .visible-links {
-    display: table;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
 
-    /* Hide navigation items on mobile, keep only site title */
+    /* Hide scrollbar for webkit browsers */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Keep all navigation items visible and allow horizontal scroll */
     @media screen and (max-width: 1024px) {
-      li:not(.masthead__menu-item--lg) {
-        display: none;
-      }
+      /* Remove the hiding of navigation items */
     }
 
     li {
-      display: table-cell;
-      vertical-align: middle;
+      display: flex;
+      align-items: center;
+      flex-shrink: 0; /* Prevent items from shrinking */
+      white-space: nowrap;
 
       &:first-child {
         font-weight: bold;
@@ -283,90 +272,7 @@
     }
   }
 
-.hidden-links {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    margin-top: 15px;
-    padding: 5px;
-    border: 1px solid var(--global-border-color);
-    border-radius: $border-radius;
-    background: #fff;
-    box-shadow: 0 0 10px rgba(#000, 0.25);
-    
-    /* Hide by default */
-    &.hidden {
-      display: none;
-    }
-    
-    /* Show when not hidden (mobile menu) */
-    &:not(.hidden) {
-      @media screen and (max-width: 1024px) {
-        display: block !important;
-        position: fixed;
-        top: 100%;
-        left: 0;
-        right: 0;
-        width: 100%;
-        margin-top: 0;
-        border-radius: 0;
-        background: var(--global-bg-color);
-        border: none;
-        border-top: 1px solid var(--global-border-color);
-        box-shadow: none;
-        z-index: 1000;
-      }
-    }
-
-    a {
-      margin: 0;
-      padding: 10px 20px;
-      font-size: $type-size-5;
-      display: block;
-      color: var(--global-masthead-link-color);
-      text-decoration: none;
-
-      &:hover {
-        color: var(--global-masthead-link-color-hover);
-        background: var(--global-border-color);
-      }
-    }
-
-    &:before {
-      content: "";
-      position: absolute;
-      top: -11px;
-      right: 10px;
-      width: 0;
-      border-style: solid;
-      border-width: 0 10px 10px;
-      border-color: var(--global-border-color) transparent;
-      display: block;
-      z-index: 0;
-    }
-
-    &:after {
-      content: "";
-      position: absolute;
-      top: -10px;
-      right: 10px;
-      width: 0;
-      border-style: solid;
-      border-width: 0 10px 10px;
-      border-color: #fff transparent;
-      display: block;
-      z-index: 1;
-    }
-
-    li {
-      display: block;
-      border-bottom: 1px solid var(--global-border-color);
-
-      &:last-child {
-        border-bottom: none;
-      }
-  }
-}
+/* Hidden links no longer needed - using horizontal scroll instead */
 
 
 /*

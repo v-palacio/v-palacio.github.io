@@ -54,6 +54,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     console.log('Hamburger button found:', hamburgerButton);
     console.log('Hidden links found:', hiddenLinks);
+    console.log('Hidden links classes:', hiddenLinks ? hiddenLinks.className : 'N/A');
+    console.log('Hidden links computed style:', hiddenLinks ? window.getComputedStyle(hiddenLinks).display : 'N/A');
     
     if (hamburgerButton && hiddenLinks) {
         console.log('Adding click listener to hamburger button');
@@ -61,9 +63,24 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             console.log('Hamburger button clicked');
             console.log('Hidden links before toggle:', hiddenLinks.classList.contains('hidden'));
+            console.log('Hidden links classes before toggle:', hiddenLinks.className);
+            
             hiddenLinks.classList.toggle('hidden');
+            hiddenLinks.classList.toggle('mobile-menu-open');
+            
             console.log('Hidden links after toggle:', hiddenLinks.classList.contains('hidden'));
-            hamburgerButton.classList.toggle('close');
+            console.log('Hidden links classes after toggle:', hiddenLinks.className);
+            console.log('Hidden links computed style after toggle:', window.getComputedStyle(hiddenLinks).display);
+            console.log('Hidden links position after toggle:', window.getComputedStyle(hiddenLinks).position);
+            console.log('Hidden links top after toggle:', window.getComputedStyle(hiddenLinks).top);
+            console.log('Hidden links width after toggle:', window.getComputedStyle(hiddenLinks).width);
+            console.log('Hidden links height after toggle:', window.getComputedStyle(hiddenLinks).height);
+            
+            // Don't toggle close class for now, just focus on menu
+            // hamburgerButton.classList.toggle('close');
+            console.log('Button classes after toggle:', hamburgerButton.className);
+            console.log('Button computed style after toggle:', window.getComputedStyle(hamburgerButton).display);
+            console.log('Button visibility after toggle:', window.getComputedStyle(hamburgerButton).visibility);
         });
     } else {
         console.log('Hamburger button or hidden links not found');
