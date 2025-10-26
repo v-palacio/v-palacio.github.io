@@ -217,11 +217,6 @@
 .visible-links {
     display: table;
 
-    /* Hide navigation items on smaller screens */
-    @media screen and (max-width: 1024px) {
-      display: none;
-    }
-
     li {
       display: table-cell;
       vertical-align: middle;
@@ -288,26 +283,28 @@
     background: #fff;
     box-shadow: 0 0 10px rgba(#000, 0.25);
     
-    /* Show hidden links on smaller screens */
-    @media screen and (max-width: 1024px) {
-      display: block;
-      position: fixed;
-      top: 100%;
-      left: 0;
-      right: 0;
-      width: 100%;
-      margin-top: 0;
-      border-radius: 0;
-      background: var(--global-bg-color);
-      border: none;
-      border-top: 1px solid var(--global-border-color);
-      box-shadow: none;
-      z-index: 1000;
-    }
-    
     /* Hide by default, show when toggled */
     &.hidden {
       display: none;
+    }
+    
+    /* Show when not hidden (mobile menu) */
+    &:not(.hidden) {
+      @media screen and (max-width: 1024px) {
+        display: block;
+        position: fixed;
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        margin-top: 0;
+        border-radius: 0;
+        background: var(--global-bg-color);
+        border: none;
+        border-top: 1px solid var(--global-border-color);
+        box-shadow: none;
+        z-index: 1000;
+      }
     }
 
     a {
