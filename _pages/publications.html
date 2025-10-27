@@ -5,236 +5,111 @@ permalink: /publications/
 author_profile: true
 ---
 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Publications — Viviana Palacio-Betancur</title>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
-
-  <style>
-    /* ===== Color System (Light) ===== */
-    :root {
-      --bg: #F9FAFB;
-      --card: #FFFFFF;
-      --text: #1E1E1E;
-      --muted: #6B7280;
-      --border: #E5E7EB;
-      --accent: #0047AB;     /* cobalt */
-      --accent-2: #3B82F6;   /* cornflower */
-      --hover: #2563EB;
-      --shadow: 0 6px 20px rgba(0,0,0,.06);
-    }
-
-    /* ===== Base ===== */
-    html, body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Figtree', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-    }
-    .wrap {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 32px 20px 60px;
-    }
-    h1, h2 {
-      font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
-      margin: 0 0 10px;
-      color: var(--text);
-      letter-spacing: .2px;
-    }
-    h1 { font-size: 2rem; }
-    h2 { font-size: 1.4rem; margin-top: 28px; }
-
-    p.lede {
-      margin: 12px 0 24px;
-      color: var(--muted);
-      max-width: 70ch;
-    }
-    a { color: var(--accent-2); text-decoration: none; }
-    a:hover { color: var(--hover); text-decoration: underline; }
-
-    /* ===== Featured Covers Grid ===== */
-    .covers {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 16px;
-    }
-    @media (max-width: 900px) { .covers { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 580px) { .covers { grid-template-columns: 1fr; } }
-
-    .cover {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      display: grid;
-      grid-template-rows: auto 1fr;
-      transition: transform .15s ease, box-shadow .15s ease;
-    }
-    .cover:hover { transform: translateY(-2px); }
-    .cover img {
-      display: block;
-      width: 100%;
-      height: auto;
-      aspect-ratio: 4/5;
-      object-fit: cover;
-      background: #e5e7eb;
-    }
-    .cover-content {
-      padding: 12px 14px 14px;
-    }
-    .jmeta {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin: 0 0 6px;
-    }
-    .ctitle {
-      font-weight: 600;
-      margin: 0 0 6px;
-    }
-    .ctitle a { text-decoration: none; }
-    .ccaption {
-      font-size: 0.92rem;
-      color: var(--muted);
-      margin: 0;
-    }
-
-    /* ===== Publications List ===== */
-    .pubs {
-      margin-top: 28px;
-    }
-    .year-block {
-      margin-top: 10px;
-      padding-top: 14px;
-      border-top: 1px solid var(--border);
-    }
-    .year {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.1rem;
-      color: var(--accent);
-      margin: 0 0 10px;
-    }
-    .pub {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 14px;
-      margin-bottom: 10px;
-      box-shadow: var(--shadow);
-    }
-    .pub .title {
-      font-weight: 600;
-      margin: 0 0 6px;
-    }
-    .pub .authors, .pub .venue {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-    .links {
-      margin-top: 8px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .btn {
-      display: inline-block;
-      padding: 6px 10px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      background: transparent;
-      color: var(--accent-2);
-      font-size: 0.9rem;
-    }
-    .btn:hover {
-      color: var(--hover);
-      border-color: var(--hover);
-      text-decoration: none;
-    }
-  </style>
-</head>
-<body>
-  <main class="wrap">
-    <header>
-      <p class="lede">
-        My publications span continuum theory, molecular simulation, and machine learning for soft and complex materials.
-        Selected works have been featured on journal covers. View my full record on
-        <a href="{{site.author.googlescholar}}" target="_blank" rel="noopener">Google Scholar</a> or
-        <a href="{{site.author.orcid}}" target="_blank" rel="noopener">ORCID</a>.
-      </p>
-    </header>
-
-    <!-- ===== Featured Covers ===== -->
-    <section aria-labelledby="covers-heading">
-      <h2 id="covers-heading">Featured Journal Covers</h2>
-      <div class="covers">
-        <!-- Cover 1 -->
-        <figure class="cover">
-           <img src="/files/images/lcpom_cover.jpg"
-            alt="Chemistry of Materials LCPOM"
-            loading="lazy" />
-          <figcaption class="cover-content">
-            <p class="jmeta">Chemistry of Materials — 2024</p>
-            <p class="ctitle">
-              <a href="https://pubs.acs.org/doi/10.1021/acs.chemmater.3c02425" target="_blank" rel="noopener">
-                LCPOM
-              </a>
-            </p>
-            <p class="ccaption">Reconstruction of LCs polarized optical microscopy images.</p>
-          </figcaption>
-        </figure>
-
-        <!-- Cover 2 -->
-        <figure class="cover">
-            <img src="/files/images/toroids_cover.jpg"
-             alt="Soft Matter - Chiral Toroids"
-             loading="lazy" />
-          <figcaption class="cover-content">
-            <p class="jmeta">Soft Matter — 2023</p>
-            <p class="ctitle">
-              <a href="https://doi.org/10.1039/D3SM00437F" target="_blank" rel="noopener">
-                Chiral Toroids
-              </a>
-            </p>
-            <p class="ccaption">Effect of curved confinement on chiral LC phases.</p>
-          </figcaption>
-        </figure>
-
-        <!-- Cover 3 -->
-        <figure class="cover">
-          <img src="/files/images/tactoids_cover.jpg"
-               alt="Soft Matter - Tactoids"
-               loading="lazy" />
-          <figcaption class="cover-content">
-            <p class="jmeta">Soft Matter — 2020</p>
-            <p class="ctitle">
-              <a href="https://doi.org/10.1039/C9SM02021G" target="_blank" rel="noopener">
-                Spheroidal confinement of Blue Phases
-              </a>
-            </p>
-            <p class="ccaption">Multiaxial geometrical frustration of chiral LC morphologies.</p>
-          </figcaption>
-        </figure>
-      </div>
-    </section>
-
-  </main>
-</body>
-</html>
-
 {% include base_path %}
-<section aria-labelledby="publications-heading">
-  <h2 id="publications-heading">Publication List</h2>
-<!-- Jekyll Publications Loop -->
+
+<style>
+/* Featured Covers Grid */
+.covers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 16px;
+}
+@media (max-width: 900px) { .covers { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 580px) { .covers { grid-template-columns: 1fr; } }
+
+.cover {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.06);
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.cover:hover { transform: translateY(-2px); }
+.cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  background: #e5e7eb;
+}
+.cover-content {
+  padding: 12px 14px 14px;
+}
+.jmeta {
+  font-size: 0.85rem;
+  color: #6B7280;
+  margin: 0 0 6px;
+}
+.ctitle {
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+.ctitle a { text-decoration: none; color: #3B82F6; }
+.ctitle a:hover { color: #2563EB; text-decoration: underline; }
+.ccaption {
+  font-size: 0.92rem;
+  color: #6B7280;
+  margin: 0;
+}
+</style>
+
+<h2>Featured Journal Covers</h2>
+<div class="covers">
+  <!-- Cover 1 -->
+  <figure class="cover">
+     <img src="/files/images/lcpom_cover.jpg"
+      alt="Chemistry of Materials LCPOM"
+      loading="lazy" />
+    <figcaption class="cover-content">
+      <p class="jmeta">Chemistry of Materials — 2024</p>
+      <p class="ctitle">
+        <a href="https://pubs.acs.org/doi/10.1021/acs.chemmater.3c02425" target="_blank" rel="noopener">
+          LCPOM
+        </a>
+      </p>
+      <p class="ccaption">Reconstruction of LCs polarized optical microscopy images.</p>
+    </figcaption>
+  </figure>
+
+  <!-- Cover 2 -->
+  <figure class="cover">
+      <img src="/files/images/toroids_cover.jpg"
+       alt="Soft Matter - Chiral Toroids"
+       loading="lazy" />
+    <figcaption class="cover-content">
+      <p class="jmeta">Soft Matter — 2023</p>
+      <p class="ctitle">
+        <a href="https://doi.org/10.1039/D3SM00437F" target="_blank" rel="noopener">
+          Chiral Toroids
+        </a>
+      </p>
+      <p class="ccaption">Effect of curved confinement on chiral LC phases.</p>
+    </figcaption>
+  </figure>
+
+  <!-- Cover 3 -->
+  <figure class="cover">
+    <img src="/files/images/tactoids_cover.jpg"
+         alt="Soft Matter - Tactoids"
+         loading="lazy" />
+    <figcaption class="cover-content">
+      <p class="jmeta">Soft Matter — 2020</p>
+      <p class="ctitle">
+        <a href="https://doi.org/10.1039/C9SM02021G" target="_blank" rel="noopener">
+          Spheroidal confinement of Blue Phases
+        </a>
+      </p>
+      <p class="ccaption">Multiaxial geometrical frustration of chiral LC morphologies.</p>
+    </figcaption>
+  </figure>
+</div>
+
+<h2>Publication List</h2>
 {% assign total_pubs = site.publications.size %}
 {% assign counter = 0 %}
 {% for post in site.publications reversed %}
