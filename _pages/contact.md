@@ -19,7 +19,7 @@ I'm always interested in discussing research collaborations, academic opportunit
 
 **LinkedIn:** [Connect with me](https://www.linkedin.com/in/viviana-palacio-betancur)
 
-**ORCID:** [0000-0002-1234-5678](https://orcid.org/0000-0002-1234-5678)
+**ORCID:** [0000-0002-1588-318X](https://orcid.org/0000-0002-1588-318X)
 
 ## Address
 - ***Beckman***: 405 N. Mathews Ave. 3261 Beckman Institute
