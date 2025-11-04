@@ -19,6 +19,6 @@ redirect_from:
   </iframe>
 </div>
 
-<p><strong>Download:</strong> <a href="/files/pdf/Palacio_CV.pdf" target="_blank">PDF version of my CV</a></p>
+<p><strong>Download:</strong> <a href="/files/pdf/Palacio_CV.pdf" target="_blank">PDF Download</a></p>
 
 
