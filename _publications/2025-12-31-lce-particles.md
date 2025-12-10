@@ -1,5 +1,5 @@
 ---
-title: "Modeling of liquid crystal elastomer particles"
+title: "Hierarchical Tissue-like Material from Nematic Synthetic Colloids with Adaptive Internal Microstructures"
 collection: publications
 category: manuscripts
 permalink: /publication/2025-12-31-lce-particles
