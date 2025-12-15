@@ -74,6 +74,12 @@ layout: default
         {% endif %}
 
         {% if page.link %}<div><a href="{{ page.link }}" class="btn">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
+        
+        {% if page.url == "/index.html" %}
+          <p style="font-size: 0.875em; color: #666; margin-top: 2em; text-align: center;">
+            <em>Last updated: {{ site.time | date: "%B %d, %Y" }}</em>
+          </p>
+        {% endif %}
       </section>
 
       <footer class="page__meta">
